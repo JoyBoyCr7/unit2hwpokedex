@@ -7,23 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> <%= pokemondb[id].name %> </h1>
-    <img src="<%= pokemondb[id].img %>">
+    <h1> <%= beginning[id].name %> </h1>
+    <img src="<%= beginning[id].img %>">
     <div class="alldata">
         <div>
             <ul>
                 <h2>Types</h2>
-                <%for (let i = 0; i < pokemondb[id].type.length; i++) { %>
-                    <li><%= pokemondb[id].type[i] %>,</li>
+                <%for (let i = 0; i < beginning[id].type.length; i++) { %>
+                    <li><%= beginning[id].type[i] %>,</li>
                 <% } %>
             </ul>
         </div>
         <div>
             <ul>
                 <h2>Stats</h2>
-                <li>Hp: <%= pokemondb[id].stats.hp %></li>
-                <li>Attack: <%= pokemondb[id].stats.attack %></li>
-                <li>Defense: <%= pokemondb[id].stats.defense %></li>
+                <li>Hp: <%= beginning[id].stats.hp %></li>
+                <li>Attack: <%= beginning[id].stats.attack %></li>
+                <li>Defense: <%= beginning[id].stats.defense %></li>
             </ul>
         </div>
     </div>

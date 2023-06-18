@@ -7,10 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <% for (let i = 0; i < pokemondb.length; i++) {%>
+    <% for (let i = 0; i < beginning.length; i++) {%>
     <form action="/pokemon/<%= i %>" method="get">
         <button type="submit">
-                <img src="<%= pokemondb[i].img %>" class="image" onclick="">
+                <img src="<%= beginning[i].img %>" class="image" onclick="">
         </button>
     </form>
     <% } %>
