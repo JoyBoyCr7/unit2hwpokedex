@@ -27,10 +27,14 @@
             </ul>
         </div>
     </div>
+    
+    <a href="/pokemon/<%=id%>/edit" ><button>Edit</button></a>
+  
 
-    <form action="/pokemon/<%=id%>/edit" method="get">
-        <button> Edit pokemon</button>
-    </form>    
-
+    <form action="/pokemon/<%=id%>?_method=DELETE" method="post">
+        <input type="submit" value="DELETE">
+        <a></a>
+    </form>
+    
 </body>
 </html>

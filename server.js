@@ -38,6 +38,11 @@ app.get("/pokemon/new",(req,res)=>{
     res.render("new.ejs")
 })
 // delete
+app.delete("/pokemon/:id",(req,res)=>{
+    let id = req.body.id
+    beginning.splice(id,1)
+    res.redirect("index.ejs")
+})
 
 // Update
 app.put("/pokemon/:id",(req,res)=>{
@@ -75,9 +80,9 @@ app.get("/pokemon/:id/edit",(req,res)=>{
 })
 
 // SHOW
-app.get('/pokemon/:id', (req, res) => {
+app.get("/pokemon/:id", (req, res) => {
     const id = req.params.id
-    console.log(id)
+    console.log("iddd",id)
     res.render('show.ejs', {beginning,id});
     });
 
