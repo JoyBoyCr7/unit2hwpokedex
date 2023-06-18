@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Edit <%= beginning[id].name %></h1>
+    <form action="/pokemon/<%= id %>?_method=PUT" method="post">
+        <p>Name:<input type="text" placeholder="name" name="name" value=<%= beginning[id].name %>></p>
+        <p>Type:<input type="text" name="type" value=<%=beginning[id].type %>></p>
+
+        <div>
+            <h3>Stats:</h3>
+            <p><input type="text" name="hp" value=<%=beginning[id].stats.hp %>></p>
+            <p><input type="text" name="attack" value=<%=beginning[id].stats.attack %>></p>
+            <p><input type="text" name="defense" value=<%=beginning[id].stats.defense %>></p>
+        </div>
+        
+        
+        <input type="submit" placeholder="submit">
+    </form>
+</body>
+</html>

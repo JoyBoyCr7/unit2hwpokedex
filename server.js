@@ -40,6 +40,23 @@ app.get("/pokemon/new",(req,res)=>{
 // delete
 
 // Update
+app.put("/pokemon/:id",(req,res)=>{
+    let id = req.params.id
+    let name = req.body.name
+    let type = req.body.type
+    let hp = req.body.hp
+    let attack = req.body.attack
+    let defense = req.body.defense
+    console.log(type.length)
+    console.log("attack",attack)
+    console.log(Array.isArray(type))
+    beginning[id].name = name
+    beginning[id].type = type.split(",")
+    beginning[id].stats.hp = hp
+    beginning[id].stats.attack = attack
+    beginning[id].stats.defense = defense
+    res.send("got it")
+})
 
 // Create
 app.post("/pokemon/create",(req,res)=>{
@@ -52,7 +69,10 @@ app.post("/pokemon/create",(req,res)=>{
     }
 })
 // Edit
-
+app.get("/pokemon/:id/edit",(req,res)=>{
+    const id  = req.params.id
+    res.render("edit.ejs", {beginning,id})
+})
 
 // SHOW
 app.get('/pokemon/:id', (req, res) => {
