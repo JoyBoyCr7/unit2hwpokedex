@@ -6,11 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body{
+        background-color: antiquewhite;
+    }
+    #alldata{
+        display: flex;
+        gap: 10px;
+    }
+</style>
 <body>
     <h1> <%= beginning[id].name %> </h1>
     <img src="<%= beginning[id].img %>">
-    <div class="alldata">
-        <div>
+    <div id="alldata">
+        <div >
             <ul>
                 <h2>Types</h2>
                 <%for (let i = 0; i < beginning[id].type.length; i++) { %>
@@ -26,15 +35,17 @@
                 <li>Defense: <%= beginning[id].stats.defense %></li>
             </ul>
         </div>
+
+        <div>
+                <h2> Make changes</h2>
+            <a href="/pokemon/<%=id%>/edit" ><button>Edit</button></a>
+            <form action="/pokemon/<%=id%>?_method=DELETE" method="post">
+                <input type="submit" value="DELETE"> 
+            </form>
+        </div>
+
     </div>
     
-    <a href="/pokemon/<%=id%>/edit" ><button>Edit</button></a>
-  
-
-    <form action="/pokemon/<%=id%>?_method=DELETE" method="post">
-        <input type="submit" value="DELETE">
-        
-    </form>
     
 </body>
 </html>

@@ -6,11 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body{
+        background-image: url("http://img.pokemondb.net/artwork/pikachu.jpg");
+        background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
 
+    }
+    form{
+        background-color: black;
+        text-align: center;
+    }
+    p{
+        color: wheat;
+    }
+</style>
 <body>
     <form action="/pokemon/create" method="post">
+        <p>ADD New Pokemon</p>
         <input type="text" placeholder="name" name="name">
         <input type="submit" placeholder="submit">
+
     </form>
 </body>
 </html>
