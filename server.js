@@ -7,7 +7,7 @@ const pokemondb = require("./models/pokemon")
 
 const beginning = []
 function firstPekemon (){
-    for (let i = 0; i < 3; i ++){
+    for (let i = 0; i < 10; i ++){
         beginning.push(pokemondb[i])
     }
     return beginning
@@ -39,9 +39,11 @@ app.get("/pokemon/new",(req,res)=>{
 })
 // delete
 app.delete("/pokemon/:id",(req,res)=>{
-    let id = req.body.id
+    const id = req.params.id
     beginning.splice(id,1)
-    res.redirect("index.ejs")
+    console.log(beginning)
+    console.log(id)
+    res.redirect("/pokemon")
 })
 
 // Update
@@ -60,7 +62,7 @@ app.put("/pokemon/:id",(req,res)=>{
     beginning[id].stats.hp = hp
     beginning[id].stats.attack = attack
     beginning[id].stats.defense = defense
-    res.send("got it")
+    res.redirect("/pokemon")
 })
 
 // Create
