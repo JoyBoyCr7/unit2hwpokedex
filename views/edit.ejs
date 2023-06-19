@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    form{
+        height: 50%;
+        width: 50%;
+        border: 2px solid black ;
+    }
+</style>
 <body>
     <h1> Edit <%= beginning[id].name %></h1>
     <form action="/pokemon/<%= id %>?_method=PUT" method="post">
@@ -18,8 +25,8 @@
             <p><input type="text" placeholder="attack" name="attack" value=<%=beginning[id].stats.attack %>></p>
             <p><input type="text" placeholder="defense" name="defense" value=<%=beginning[id].stats.defense %>></p>
         </div>
-        
         <input type="submit" placeholder="submit">
+        
     </form>
 
     

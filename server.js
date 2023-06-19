@@ -68,11 +68,17 @@ app.put("/pokemon/:id",(req,res)=>{
 // Create
 app.post("/pokemon/create",(req,res)=>{
     let name = req.body.name
+    name = name.charAt(0).toUpperCase() + name.slice(1)
+    let found = false
     for (let i = 0; i < pokemondb.length; i++){
         if (name === pokemondb[i].name){
             beginning.push(pokemondb[i])
+            found = true
             res.redirect("/pokemon")
-        }  
+        }
+    }
+    if (found === false){
+        res.send("<h1>Alert(That is not a Character)<h1>")
     }
 })
 // Edit

@@ -13,6 +13,15 @@
     #alldata{
         display: flex;
         gap: 10px;
+        text-align: center;
+        justify-content: center;
+    }
+    img{
+        display: block;
+        margin: auto;
+    }
+    h1{
+        text-align: center;
     }
 </style>
 <body>
@@ -42,6 +51,7 @@
             <form action="/pokemon/<%=id%>?_method=DELETE" method="post">
                 <input type="submit" value="DELETE"> 
             </form>
+            <a href="/pokemon">Back to All Pokemon</a>
         </div>
 
     </div>
