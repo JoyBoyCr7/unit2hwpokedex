@@ -7,7 +7,7 @@ const pokemondb = require("./models/pokemon")
 
 const beginning = []
 function firstPekemon (){
-    for (let i = 0; i < 10; i ++){
+    for (let i = 0; i < 9; i ++){
         beginning.push(pokemondb[i])
     }
     return beginning

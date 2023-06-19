@@ -6,14 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <% for (let i = 0; i < beginning.length; i++) {%>
-    <form action="/pokemon/<%= i %>" method="get">
-        <button type="submit">
-                <img src="<%= beginning[i].img %>" class="image" onclick="">
-        </button>
-    </form>
-    <% } %>
-    <a href="/pokemon/new">Add a Pokemon</a>
+<style>
+    #everyone{
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        max-width: 800px;
+    }
+
+    #images{
+        width: 250px;
+        height: 250px;
+    }
+   #new{
+    display: block;
+    text-align: center;
+   }
+</style>
+<body class="body">
+    <a href="/pokemon/new" id="new"><button>Add New Pokemon</button></a>
+    <div id="everyone">
+        <% for (let i = 0; i < beginning.length; i++) {%>
+        <form action="/pokemon/<%= i %>" method="get">
+            <button type="submit" id="buttons">
+                    <img src="<%= beginning[i].img %>" id="images">
+            </button>
+        </form>
+        <style></style>
+        <% } %>
+        
+    </div>
 </body>
 </html>
