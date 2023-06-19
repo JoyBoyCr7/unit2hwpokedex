@@ -41,6 +41,7 @@ app.get("/pokemon/new",(req,res)=>{
 app.delete("/pokemon/:id",(req,res)=>{
     const id = req.params.id
     beginning.splice(id,1)
+    /// testing
     console.log(beginning)
     console.log(id)
     res.redirect("/pokemon")
@@ -54,9 +55,11 @@ app.put("/pokemon/:id",(req,res)=>{
     let hp = req.body.hp
     let attack = req.body.attack
     let defense = req.body.defense
+    /// testing
     console.log(type.length)
     console.log("attack",attack)
     console.log(Array.isArray(type))
+    //////
     beginning[id].name = name
     beginning[id].type = type.split(",")
     beginning[id].stats.hp = hp
@@ -90,7 +93,8 @@ app.get("/pokemon/:id/edit",(req,res)=>{
 // SHOW
 app.get("/pokemon/:id", (req, res) => {
     const id = req.params.id
-    console.log("iddd",id)
+    ///testing
+    console.log("id",id)
     res.render('show.ejs', {beginning,id});
     });
 
