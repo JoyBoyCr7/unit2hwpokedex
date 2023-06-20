@@ -81,7 +81,9 @@ app.post("/pokemon/create",(req,res)=>{
         }
     }
     if (found === false){
-        res.send("<h1>Alert(That is not a Character)<h1>")
+        res.send(`<h1>Alert(That is not a Character)<h1>
+        <a href="/pokemon/new">Back To Search </a>
+        `)
     }
 })
 // Edit
