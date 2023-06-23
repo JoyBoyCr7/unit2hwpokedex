@@ -57,20 +57,23 @@ router.post("/create",(req,res)=>{
     let name = req.body.name
     const img = req.body.img
     let stats = req.body.stats
+    //testing
     console.log(stats)
     console.log(req.body)
+    //
     const type = req.body.type
     const hp = stats[0]
     const attack = stats[1]
     const defense = stats[2]
     const all = {name,img,type:type,stats:{hp,attack,defense}}
+    // testing
     console.log(all)
+    //
     name = name.charAt(0).toUpperCase() + name.slice(1)
     
     beginning.push(all)
     res.redirect("/pokemon")
     
-   
 })
 // Edit
 router.get("/:id/edit",(req,res)=>{
