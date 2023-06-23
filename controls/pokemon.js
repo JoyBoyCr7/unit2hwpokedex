@@ -55,20 +55,22 @@ router.put("/:id",(req,res)=>{
 // Create
 router.post("/create",(req,res)=>{
     let name = req.body.name
+    const img = req.body.img
+    let stats = req.body.stats
+    console.log(stats)
+    console.log(req.body)
+    const type = req.body.type
+    const hp = stats[0]
+    const attack = stats[1]
+    const defense = stats[2]
+    const all = {name,img,type:type,stats:{hp,attack,defense}}
+    console.log(all)
     name = name.charAt(0).toUpperCase() + name.slice(1)
-    let found = false
-    for (let i = 0; i < pokemondb.length; i++){
-        if (name === pokemondb[i].name){
-            beginning.push(pokemondb[i])
-            found = true
-            res.redirect("/pokemon")
-        }
-    }
-    if (found === false){
-        res.send(`<h1>Alert(That is not a Character)<h1>
-        <a href="/pokemon/new">Back To Search </a>
-        `)
-    }
+    
+    beginning.push(all)
+    res.redirect("/pokemon")
+    
+   
 })
 // Edit
 router.get("/:id/edit",(req,res)=>{

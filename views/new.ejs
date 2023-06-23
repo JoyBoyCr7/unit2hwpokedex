@@ -19,16 +19,39 @@
         background-color: black;
         text-align: center;
     }
+    #fill{
+        display: flex;
+    }
     p{
         color: wheat;
     }
+
 </style>
 <body>
     <form action="/pokemon/create" method="post">
         <p>ADD New Pokemon</p>
-        <input type="text" placeholder="name" name="name">
-        <input type="submit" placeholder="submit">
+       <div id="fill">
+        <div><p>img</p>
+            <input type="text" placeholder="image" name="img" value="https://www.shutterstock.com/image-vector/pikachu-vector-art-illustration-on-600w-2163481879.jpg">
+        </div>
+        <div><p>Name</p>
+            <input type="text" placeholder="name" name="name">
+        </div>
 
+        <div><p>types</p>
+            <input type="text" placeholder="types" name="type"><br>
+            <input type="text" placeholder="types" name="type">
+        </div>
+
+        <div><p>Stats</p>
+            <input type="text" placeholder="stats" name="stats"><br>
+            <input type="text" placeholder="hp" name="stats"><br>
+            <input type="text" placeholder="defense" name="stats">
+        </div>
+
+        <div><p>Finish</p>
+            <input type="submit" placeholder="submit"></div>
+        </div>
     </form>
 </body>
 </html>
